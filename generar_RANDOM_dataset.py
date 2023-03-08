@@ -16,7 +16,7 @@ import miscFunctions as mf
 
 
 i=0
-rootdir='/home/jeremias/Documentos/PruebaIndicadores_BOW/LSD_dataset/sec_pegadas/'
+rootdir='/home/jeremias/Documentos/PruebaIndicadores_BOW/lsd_dataset/sec_pegadas/'
 run_log_path= 'run_log/' 
 
 
@@ -26,9 +26,9 @@ mf.saveRunData( i , run_log_path, train_files, valid_files, test_files) #guardam
 
 
 #merge all files into a single one for Neural network train,validation or test and save it into a folder
-mf.joinAllFiles(filesList= train_files, src_dir=rootdir ,savePath="/home/jeremias/Documentos/PruebaIndicadores_BOW/LSD_dataset/train/")
-mf.joinAllFiles(filesList= valid_files, src_dir=rootdir ,savePath="/home/jeremias/Documentos/PruebaIndicadores_BOW/LSD_dataset/validation/")
-mf.joinAllFiles(filesList= test_files,  src_dir=rootdir ,savePath="/home/jeremias/Documentos/PruebaIndicadores_BOW/LSD_dataset/test/")
+mf.joinAllFiles(filesList= train_files, src_dir=rootdir ,savePath="/home/jeremias/Documentos/PruebaIndicadores_BOW/lsd_dataset/train/")
+mf.joinAllFiles(filesList= valid_files, src_dir=rootdir ,savePath="/home/jeremias/Documentos/PruebaIndicadores_BOW/lsd_dataset/validation/")
+mf.joinAllFiles(filesList= test_files,  src_dir=rootdir ,savePath="/home/jeremias/Documentos/PruebaIndicadores_BOW/lsd_dataset/test/")
 
 
 

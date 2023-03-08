@@ -10,7 +10,7 @@ import pandas as pd
 import os
 
 
-rootdir='/home/jeremias/Documentos/PruebaIndicadores_BOW/LSD_dataset/validation/'
+rootdir='/home/jeremias/Documentos/PruebaIndicadores_BOW/lsd_dataset/validation/'
 
 first=True
 for file in os.listdir(rootdir):

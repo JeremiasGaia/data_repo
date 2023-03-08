@@ -15,7 +15,7 @@ import os
 
 rootdir='/home/jeremias/Matlab/Jere/Indicadores_Paper/RelacionIndicadoresDesempeno/PruebasDiciembre22/'
 
-savepath='/home/jeremias/Documentos/PruebaIndicadores_BOW/LSD_dataset/sec_pegadas/'
+savepath='/home/jeremias/Documentos/PruebaIndicadores_BOW/lsd_dataset/sec_pegadas/'
 
 seqname='LSD_KITTI_10'
 
