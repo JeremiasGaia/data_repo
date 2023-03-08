@@ -71,7 +71,7 @@ def splitDatasetCustom(rootdir,train_perc, valid_perc, test_perc):
     return [train_files, valid_files, test_files]
 
 
-def joinAllFiles(filesList, src_dir, savePath):
+def joinAllFiles(filesList, src_dir, savePath, run_number):
     """
     Merge all files into a single one for Neural network train,validation or test and save it into a folder
     Parameters
@@ -86,20 +86,25 @@ def joinAllFiles(filesList, src_dir, savePath):
 
     """
    
-
+    i=run_number
     first=True
     for file in filesList:
     
         # print(file)
         
         if first:
-            df=pd.read_excel(src_dir+file, index_col=None)
+            df=pd.read_excel(os.path.join(src_dir,file), index_col=None)
             first=False
         else:
-            new = pd.read_excel(src_dir+file, index_col=None)
+            new = pd.read_excel(os.path.join(src_dir,file), index_col=None)
             df =  pd.concat([df,new], axis = 0, ignore_index=True)
             
-    titulo_excel= savePath + savePath[60:-1] + '_data.xlsx'
+    if 'train' in savePath:
+        titulo_excel= os.path.join(savePath, 'train_data_run_'+str(i)+'.xlsx')
+    if 'test' in savePath:
+        titulo_excel= os.path.join(savePath, 'test_data_run_'+str(i)+'.xlsx')
+    if 'validation' in savePath:
+        titulo_excel= os.path.join(savePath, 'validation_data_run_'+str(i)+'.xlsx')
 
 
     writer = pd.ExcelWriter(titulo_excel, engine='xlsxwriter')# Create a Pandas Excel writer
@@ -130,6 +135,8 @@ def joinAllFiles(filesList, src_dir, savePath):
 
 def saveRunData(run, run_log_savePath, train_files, valid_files, test_files):
     
+    textFilename= os.path.join(run_log_savePath,'run_info' ,'run_' + str(run) +'_info.txt')
+    
     # fill with zeros to print the pandas dataframe
     valid_f = (valid_files + ['-']*len(train_files))[:len(train_files)]
     test_f  = (test_files  + ['-']*len(train_files))[:len(train_files)]
@@ -140,8 +147,8 @@ def saveRunData(run, run_log_savePath, train_files, valid_files, test_files):
         'Validation': valid_f,
         'Test':       test_f })
 
-    textFilename= run_log_savePath + 'run_' + str(run) +'_info.txt'
-
+    
+ 
     with open(textFilename, 'w') as f:
         dfasstring=df.to_string(index=False)
         f.write(dfasstring)
