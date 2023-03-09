@@ -28,7 +28,7 @@ run_log_path    =  r"C:\Users\jereg\OneDrive\Documentos\ProgramasPython\LSTM_Tes
 
 
 cant_entrenamientos=20
-training_epochs=2
+training_epochs=50
 
 for i in range(cant_entrenamientos):
     
