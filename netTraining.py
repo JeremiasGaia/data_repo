@@ -90,7 +90,7 @@ def training(train_data_path, valid_data_path, test_data_path, run_number, run_l
     # -------------------------------------------------------------
     # -------------------------------------------------------------
     lstm_units  = 20
-    dense_units = 256 #orig 256
+    dense_units = 10 #orig 256
     drop_perc= 0.4 #dropout percentage
     
     # probar con sigmoid, elu, relu
