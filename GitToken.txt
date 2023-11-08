@@ -1,9 +1,0 @@
-
-Settings/Developer settings/ personal access tokens Tokens(classic)
-
-Ahí podemos generar un token para el repositorio.  El siguiente token es válido hasta el 8/11/24
-
-usenrame: JeremiasGaia
-Password: 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
-
-
