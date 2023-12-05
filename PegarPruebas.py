@@ -51,7 +51,7 @@ for seqname in seqnames:
         # TUM_sequence_1
         # LSD_TUM_sequence_10_p1.xlsx
         # LSD_TUM_sequence_11_p1.xlsx
-        # hago una comparativa de largos de stringen la linea 58 if (len(seqname) == len (file[4:(file.find("_p"))])):
+        # hago una comparativa de largos de string en la linea 58 if (len(seqname) == len (file[4:(file.find("_p"))])):
         
         if (seqname in file):
             
